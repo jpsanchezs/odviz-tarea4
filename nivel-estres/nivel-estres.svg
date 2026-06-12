@@ -1,0 +1,163 @@
+
+
+<svg width="460"
+     height="400"
+     xmlns="http://www.w3.org/2000/svg"
+     xmlns:v="https://odviz.org/1.0/">
+
+  <style>
+    .tick-label {
+      font-family: sans-serif;
+      fill: #333;
+    }
+
+    .axis-line,
+    .tick-line {
+      stroke: #666;
+    }
+
+    .chart-title {
+      font-family: sans-serif;
+      font-size: 14px;
+      fill: #222;
+    }
+  </style>
+
+  <text class="chart-title"
+        x="230.0"
+        y="20"
+        text-anchor="middle">
+    Distribución del nivel de estrés
+  </text>
+
+  <g transform="translate(60,30)">
+
+
+
+    <g transform="translate(0,300)">
+      <!-- axis orientation=bottom range=[0,370] ticks=3 -->
+  <g class="axis axis-bottom" transform="translate(0, 0)">
+    <line class="axis-line" x1="0" y1="0" x2="370" y2="0" stroke="currentColor" stroke-width="1"/>
+    <g class="tick" transform="translate(18.50, 0)">
+      <line class="tick-line" x1="0" y1="0" x2="0" y2="6" stroke="currentColor" stroke-width="1"/>
+      <text class="tick-label" x="0" y="9" text-anchor="middle" dominant-baseline="hanging" dy="0.15em" >Low</text>
+    </g>
+    <g class="tick" transform="translate(141.83, 0)">
+      <line class="tick-line" x1="0" y1="0" x2="0" y2="6" stroke="currentColor" stroke-width="1"/>
+      <text class="tick-label" x="0" y="9" text-anchor="middle" dominant-baseline="hanging" dy="0.15em" >Medium</text>
+    </g>
+    <g class="tick" transform="translate(265.17, 0)">
+      <line class="tick-line" x1="0" y1="0" x2="0" y2="6" stroke="currentColor" stroke-width="1"/>
+      <text class="tick-label" x="0" y="9" text-anchor="middle" dominant-baseline="hanging" dy="0.15em" >High</text>
+    </g>
+  </g>
+
+    </g>
+
+
+    <g>
+      <!-- axis orientation=left range=[300,0] ticks=7 -->
+  <g class="axis axis-left" transform="translate(0, 0)">
+    <line class="axis-line" x1="0" y1="300" x2="0" y2="0" stroke="currentColor" stroke-width="1"/>
+    <g class="tick" transform="translate(0, 300)">
+      <line class="tick-line" x1="-6" y1="0" x2="0" y2="0" stroke="currentColor" stroke-width="1"/>
+      <text class="tick-label" x="-9" y="0" text-anchor="end" dominant-baseline="central" >0</text>
+    </g>
+    <g class="tick" transform="translate(0, 250)">
+      <line class="tick-line" x1="-6" y1="0" x2="0" y2="0" stroke="currentColor" stroke-width="1"/>
+      <text class="tick-label" x="-9" y="0" text-anchor="end" dominant-baseline="central" >500</text>
+    </g>
+    <g class="tick" transform="translate(0, 200)">
+      <line class="tick-line" x1="-6" y1="0" x2="0" y2="0" stroke="currentColor" stroke-width="1"/>
+      <text class="tick-label" x="-9" y="0" text-anchor="end" dominant-baseline="central" >1000</text>
+    </g>
+    <g class="tick" transform="translate(0, 150)">
+      <line class="tick-line" x1="-6" y1="0" x2="0" y2="0" stroke="currentColor" stroke-width="1"/>
+      <text class="tick-label" x="-9" y="0" text-anchor="end" dominant-baseline="central" >1500</text>
+    </g>
+    <g class="tick" transform="translate(0, 100)">
+      <line class="tick-line" x1="-6" y1="0" x2="0" y2="0" stroke="currentColor" stroke-width="1"/>
+      <text class="tick-label" x="-9" y="0" text-anchor="end" dominant-baseline="central" >2000</text>
+    </g>
+    <g class="tick" transform="translate(0, 50)">
+      <line class="tick-line" x1="-6" y1="0" x2="0" y2="0" stroke="currentColor" stroke-width="1"/>
+      <text class="tick-label" x="-9" y="0" text-anchor="end" dominant-baseline="central" >2500</text>
+    </g>
+    <g class="tick" transform="translate(0, 0)">
+      <line class="tick-line" x1="-6" y1="0" x2="0" y2="0" stroke="currentColor" stroke-width="1"/>
+      <text class="tick-label" x="-9" y="0" text-anchor="end" dominant-baseline="central" >3000</text>
+    </g>
+  </g>
+
+    </g>
+
+      <rect id="bar-0"
+            href="#stress-0"
+            x="18.5"
+            y="49.69999999999999"
+            width="86.33333333333333"
+            height="250.3"
+            fill="#2ca02c"
+            opacity="0.85"/>
+      <rect id="bar-1"
+            href="#stress-1"
+            x="141.83333333333331"
+            y="56.29999999999998"
+            width="86.33333333333333"
+            height="243.70000000000002"
+            fill="#2ca02c"
+            opacity="0.85"/>
+      <rect id="bar-2"
+            href="#stress-2"
+            x="265.16666666666663"
+            y="44.0"
+            width="86.33333333333333"
+            height="256.0"
+            fill="#2ca02c"
+            opacity="0.85"/>
+
+    <text text-anchor="middle"
+          x="185.0"
+          y="355"
+          font-family="sans-serif"
+          font-size="12"
+          fill="#444">
+      Nivel de estrés
+    </text>
+
+    <text text-anchor="middle"
+          transform="rotate(-90)"
+          x="-150.0"
+          y="-45"
+          font-family="sans-serif"
+          font-size="12"
+          fill="#444">
+      Cantidad de usuarios
+    </text>
+
+  </g>
+
+  <metadata>
+    <v:table name="stress_data"
+             description="Distribución del nivel de estrés"
+             visualization="chart"
+             columns="id,stress_level,count"
+             primaryKey="id">
+
+      <v:row id="stress-0"
+             hrefs="bar-0">
+        0,Low,2503
+      </v:row>
+      <v:row id="stress-1"
+             hrefs="bar-1">
+        1,Medium,2437
+      </v:row>
+      <v:row id="stress-2"
+             hrefs="bar-2">
+        2,High,2560
+      </v:row>
+
+    </v:table>
+  </metadata>
+
+</svg>

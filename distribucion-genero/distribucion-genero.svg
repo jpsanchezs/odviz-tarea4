@@ -1,0 +1,147 @@
+
+
+
+<svg width="460"
+     height="400"
+     xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     xmlns:v="https://odviz.org/1.0/">
+
+  <style>
+    .tick-label { font-family: sans-serif; fill: #333; }
+    .axis-line, .tick-line { stroke: #666; }
+    .chart-title { font-family: sans-serif; font-size: 14px; fill: #222; }
+    .axis-label { font-family: sans-serif; font-size: 12px; fill: #444; }
+    .bar { fill: #69b3a2; opacity: 0.85; }
+  </style>
+
+  <text class="chart-title"
+        x="230.0"
+        y="20"
+        text-anchor="middle">
+    Distribución de género de la muestra
+  </text>
+
+  <g transform="translate(60,30)">
+
+
+    <g transform="translate(0,300)">
+      <!-- axis orientation=bottom range=[0,370] ticks=3 -->
+  <g class="axis axis-bottom" transform="translate(0, 0)">
+    <line class="axis-line" x1="0" y1="0" x2="370" y2="0" stroke="currentColor" stroke-width="1"/>
+    <g class="tick" transform="translate(18.50, 0)">
+      <line class="tick-line" x1="0" y1="0" x2="0" y2="6" stroke="currentColor" stroke-width="1"/>
+      <text class="tick-label" x="0" y="9" text-anchor="middle" dominant-baseline="hanging" dy="0.15em" >Male</text>
+    </g>
+    <g class="tick" transform="translate(141.83, 0)">
+      <line class="tick-line" x1="0" y1="0" x2="0" y2="6" stroke="currentColor" stroke-width="1"/>
+      <text class="tick-label" x="0" y="9" text-anchor="middle" dominant-baseline="hanging" dy="0.15em" >Other</text>
+    </g>
+    <g class="tick" transform="translate(265.17, 0)">
+      <line class="tick-line" x1="0" y1="0" x2="0" y2="6" stroke="currentColor" stroke-width="1"/>
+      <text class="tick-label" x="0" y="9" text-anchor="middle" dominant-baseline="hanging" dy="0.15em" >Female</text>
+    </g>
+  </g>
+
+    </g>
+
+    <g>
+      <!-- axis orientation=left range=[300,0] ticks=7 -->
+  <g class="axis axis-left" transform="translate(0, 0)">
+    <line class="axis-line" x1="0" y1="300" x2="0" y2="0" stroke="currentColor" stroke-width="1"/>
+    <g class="tick" transform="translate(0, 300)">
+      <line class="tick-line" x1="-6" y1="0" x2="0" y2="0" stroke="currentColor" stroke-width="1"/>
+      <text class="tick-label" x="-9" y="0" text-anchor="end" dominant-baseline="central" >0</text>
+    </g>
+    <g class="tick" transform="translate(0, 250)">
+      <line class="tick-line" x1="-6" y1="0" x2="0" y2="0" stroke="currentColor" stroke-width="1"/>
+      <text class="tick-label" x="-9" y="0" text-anchor="end" dominant-baseline="central" >500</text>
+    </g>
+    <g class="tick" transform="translate(0, 200)">
+      <line class="tick-line" x1="-6" y1="0" x2="0" y2="0" stroke="currentColor" stroke-width="1"/>
+      <text class="tick-label" x="-9" y="0" text-anchor="end" dominant-baseline="central" >1000</text>
+    </g>
+    <g class="tick" transform="translate(0, 150)">
+      <line class="tick-line" x1="-6" y1="0" x2="0" y2="0" stroke="currentColor" stroke-width="1"/>
+      <text class="tick-label" x="-9" y="0" text-anchor="end" dominant-baseline="central" >1500</text>
+    </g>
+    <g class="tick" transform="translate(0, 100)">
+      <line class="tick-line" x1="-6" y1="0" x2="0" y2="0" stroke="currentColor" stroke-width="1"/>
+      <text class="tick-label" x="-9" y="0" text-anchor="end" dominant-baseline="central" >2000</text>
+    </g>
+    <g class="tick" transform="translate(0, 50)">
+      <line class="tick-line" x1="-6" y1="0" x2="0" y2="0" stroke="currentColor" stroke-width="1"/>
+      <text class="tick-label" x="-9" y="0" text-anchor="end" dominant-baseline="central" >2500</text>
+    </g>
+    <g class="tick" transform="translate(0, 0)">
+      <line class="tick-line" x1="-6" y1="0" x2="0" y2="0" stroke="currentColor" stroke-width="1"/>
+      <text class="tick-label" x="-9" y="0" text-anchor="end" dominant-baseline="central" >3000</text>
+    </g>
+  </g>
+
+    </g>
+
+
+  <rect id="bar-0"
+        href="#gender-0"
+        x="18.5"
+        y="44.70000000000002"
+        width="86.33333333333333"
+        height="255.29999999999998"
+        class="bar"/>
+
+  <rect id="bar-1"
+        href="#gender-1"
+        x="141.83333333333331"
+        y="51.400000000000006"
+        width="86.33333333333333"
+        height="248.6"
+        class="bar"/>
+
+  <rect id="bar-2"
+        href="#gender-2"
+        x="265.16666666666663"
+        y="53.900000000000006"
+        width="86.33333333333333"
+        height="246.1"
+        class="bar"/>
+
+    <text text-anchor="middle"
+          x="185.0"
+          y="355"
+          class="axis-label">
+      Género
+    </text>
+
+    <text text-anchor="middle"
+          transform="rotate(-90)"
+          x="-150.0"
+          y="-45"
+          class="axis-label">
+      Cantidad
+    </text>
+  </g>
+
+<metadata>
+  <v:table name="gender_data"
+           description="Distribución de género de la muestra"
+           visualization="chart"
+           columns="id,gender,count"
+           primaryKey="id">
+
+    <v:row id="gender-0"
+           hrefs="bar-0">
+      0,Male,2553
+    </v:row>
+    <v:row id="gender-1"
+           hrefs="bar-1">
+      1,Other,2486
+    </v:row>
+    <v:row id="gender-2"
+           hrefs="bar-2">
+      2,Female,2461
+    </v:row>
+
+  </v:table>
+</metadata>
+</svg>

@@ -1,0 +1,19 @@
+{
+  "data": [
+    {
+      "id": 0,
+      "stress_level": "Low",
+      "count": 2503
+    },
+    {
+      "id": 1,
+      "stress_level": "Medium",
+      "count": 2437
+    },
+    {
+      "id": 2,
+      "stress_level": "High",
+      "count": 2560
+    }
+  ]
+}

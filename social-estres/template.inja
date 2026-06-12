@@ -1,0 +1,99 @@
+{# Horas en redes sociales vs tiempo de pantalla por nivel de estrés #}
+{# Basado en: https://d3-graph-gallery.com/graph/custom_theme.html #}
+
+{% set margin = obj("top", 30, "right", 120, "bottom", 50, "left", 60) %}
+{% set width = 560 - margin.left - margin.right %}
+{% set height = 520 - margin.top - margin.bottom %}
+
+<svg width="{{width + margin.left + margin.right}}"
+     height="{{height + margin.top + margin.bottom}}"
+     xmlns="http://www.w3.org/2000/svg"
+     xmlns:v="https://odviz.org/1.0/">
+
+  <style>
+    .tick-label { font-family: sans-serif; fill: #333; }
+    .axis-line, .tick-line { stroke: #666; }
+    .chart-title { font-family: sans-serif; font-size: 14px; fill: #222; }
+    .legend-label { font-family: sans-serif; font-size: 11px; fill: #333; }
+  </style>
+
+  <text class="chart-title"
+        x="{{ width / 2 }}"
+        y="20"
+        text-anchor="middle">
+    Horas en redes sociales vs tiempo de pantalla
+  </text>
+
+  <g transform="translate({{margin.left}},{{margin.top}})">
+
+    <rect x="0" y="0" width="{{ width }}" height="{{ height }}" fill="#EBEBEB"/>
+
+    {% set x = scaleLinear()
+          | domain([0, 12])
+          | range(0, width) %}
+
+    <g transform="translate(0,{{height}})">
+      {{ call(axisBottom(x) | tickCount(6)) }}
+    </g>
+
+    {% set y = scaleLinear()
+          | domain([0, 16])
+          | range(height, 0) %}
+
+    {{ call(axisLeft(y) | tickCount(6)) }}
+
+    {% set color = scaleOrdinal()
+          | domain(["Low", "Medium", "High"])
+          | range(["#1f77b4", "#ff7f0e", "#d62728"]) %}
+
+{% for d in data %}
+  <circle id="point-{{ d.id }}"
+          href="#point-{{ d.id }}"
+          cx="{{ scale(x, d.social) }}"
+          cy="{{ scale(y, d.screen) }}"
+          r="2"
+          fill="{{ scale(color, d.stress) }}"
+          opacity="0.5"/>
+{% endfor %}
+
+    <text text-anchor="middle"
+          x="{{ width / 2 }}"
+          y="{{ height + 40 }}"
+          font-family="sans-serif" font-size="12" fill="#444">
+      Horas en redes sociales
+    </text>
+
+    <text text-anchor="middle"
+          transform="rotate(-90)"
+          x="{{ 0 - height / 2 }}"
+          y="-45"
+          font-family="sans-serif" font-size="12" fill="#444">
+      Tiempo de pantalla diario (horas)
+    </text>
+
+    <circle cx="{{ width + 15 }}" cy="20" r="5" fill="#1f77b4"/>
+    <text font-family="sans-serif" font-size="11" fill="#333" x="{{ width + 25 }}" y="24">Low</text>
+    <circle cx="{{ width + 15 }}" cy="42" r="5" fill="#ff7f0e"/>
+    <text font-family="sans-serif" font-size="11" fill="#333" x="{{ width + 25 }}" y="46">Medium</text>
+    <circle cx="{{ width + 15 }}" cy="64" r="5" fill="#d62728"/>
+    <text font-family="sans-serif" font-size="11" fill="#333" x="{{ width + 25 }}" y="68">High</text>
+
+  </g>
+
+<metadata>
+  <v:table name="social_screen_data"
+           description="Horas en redes sociales vs tiempo de pantalla por nivel de estrés"
+           visualization="chart"
+           columns="id,social,screen,stress"
+           primaryKey="id">
+
+    {% for d in data %}
+    <v:row id="point-{{ d.id }}"
+           hrefs="point-{{ d.id }}">
+      {{ d.id }},{{ d.social }},{{ d.screen }},{{ d.stress }}
+    </v:row>
+    {% endfor %}
+
+  </v:table>
+</metadata>
+</svg>

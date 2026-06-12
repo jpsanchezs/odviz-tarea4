@@ -1,0 +1,19 @@
+{
+  "data": [
+    {
+      "id": 0,
+      "gender": "Male",
+      "count": 2553
+    },
+    {
+      "id": 1,
+      "gender": "Other",
+      "count": 2486
+    },
+    {
+      "id": 2,
+      "gender": "Female",
+      "count": 2461
+    }
+  ]
+}

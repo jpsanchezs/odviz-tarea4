@@ -1,0 +1,267 @@
+
+
+
+<svg width="800"
+     height="380"
+     xmlns="http://www.w3.org/2000/svg"
+     xmlns:v="https://odviz.org/1.0/">
+
+  <style>
+    .tick-label {
+      font-family: sans-serif;
+      fill: #333;
+      font-size: 11px;
+    }
+
+    .axis-line,
+    .tick-line {
+      stroke: #666;
+    }
+
+    .grid-line {
+      stroke: #e6e6e6;
+    }
+
+    .title {
+      font-family: sans-serif;
+      font-size: 16px;
+      fill: #222;
+    }
+
+    .axis-label {
+      font-family: sans-serif;
+      font-size: 13px;
+      fill: #333;
+    }
+
+    .legend-label {
+      font-family: sans-serif;
+      font-size: 12px;
+      fill: #333;
+    }
+  </style>
+
+  <text x="20"
+        y="25"
+        class="title">
+    Distribución del nivel de estrés por condición de adicción
+  </text>
+
+  <g transform="translate(70,40)">
+
+
+
+
+    <line x1="0" x2="600" y1="280.0" y2="280.0" class="grid-line"/>
+    <line x1="0" x2="600" y1="206.31578947368422" y2="206.31578947368422" class="grid-line"/>
+    <line x1="0" x2="600" y1="132.63157894736844" y2="132.63157894736844" class="grid-line"/>
+    <line x1="0" x2="600" y1="58.94736842105263" y2="58.94736842105263" class="grid-line"/>
+    <line x1="0" x2="600" y1="0.0" y2="0.0" class="grid-line"/>
+
+    <g transform="translate(0,280)">
+      <!-- axis orientation=bottom range=[0,600] ticks=3 -->
+  <g class="axis axis-bottom" transform="translate(0, 0)">
+    <line class="axis-line" x1="0" y1="0" x2="600" y2="0" stroke="currentColor" stroke-width="1"/>
+    <g class="tick" transform="translate(12, 0)">
+      <line class="tick-line" x1="0" y1="0" x2="0" y2="6" stroke="currentColor" stroke-width="1"/>
+      <text class="tick-label" x="0" y="9" text-anchor="middle" dominant-baseline="hanging" dy="0.15em" >Low</text>
+    </g>
+    <g class="tick" transform="translate(212, 0)">
+      <line class="tick-line" x1="0" y1="0" x2="0" y2="6" stroke="currentColor" stroke-width="1"/>
+      <text class="tick-label" x="0" y="9" text-anchor="middle" dominant-baseline="hanging" dy="0.15em" >Medium</text>
+    </g>
+    <g class="tick" transform="translate(412, 0)">
+      <line class="tick-line" x1="0" y1="0" x2="0" y2="6" stroke="currentColor" stroke-width="1"/>
+      <text class="tick-label" x="0" y="9" text-anchor="middle" dominant-baseline="hanging" dy="0.15em" >High</text>
+    </g>
+  </g>
+
+    </g>
+
+    <g>
+      <!-- axis orientation=left range=[280,0] ticks=10 -->
+  <g class="axis axis-left" transform="translate(0, 0)">
+    <line class="axis-line" x1="0" y1="280" x2="0" y2="0" stroke="currentColor" stroke-width="1"/>
+    <g class="tick" transform="translate(0, 280)">
+      <line class="tick-line" x1="-6" y1="0" x2="0" y2="0" stroke="currentColor" stroke-width="1"/>
+      <text class="tick-label" x="-9" y="0" text-anchor="end" dominant-baseline="central" >0</text>
+    </g>
+    <g class="tick" transform="translate(0, 250.53)">
+      <line class="tick-line" x1="-6" y1="0" x2="0" y2="0" stroke="currentColor" stroke-width="1"/>
+      <text class="tick-label" x="-9" y="0" text-anchor="end" dominant-baseline="central" >200</text>
+    </g>
+    <g class="tick" transform="translate(0, 221.05)">
+      <line class="tick-line" x1="-6" y1="0" x2="0" y2="0" stroke="currentColor" stroke-width="1"/>
+      <text class="tick-label" x="-9" y="0" text-anchor="end" dominant-baseline="central" >400</text>
+    </g>
+    <g class="tick" transform="translate(0, 191.58)">
+      <line class="tick-line" x1="-6" y1="0" x2="0" y2="0" stroke="currentColor" stroke-width="1"/>
+      <text class="tick-label" x="-9" y="0" text-anchor="end" dominant-baseline="central" >600</text>
+    </g>
+    <g class="tick" transform="translate(0, 162.11)">
+      <line class="tick-line" x1="-6" y1="0" x2="0" y2="0" stroke="currentColor" stroke-width="1"/>
+      <text class="tick-label" x="-9" y="0" text-anchor="end" dominant-baseline="central" >800</text>
+    </g>
+    <g class="tick" transform="translate(0, 132.63)">
+      <line class="tick-line" x1="-6" y1="0" x2="0" y2="0" stroke="currentColor" stroke-width="1"/>
+      <text class="tick-label" x="-9" y="0" text-anchor="end" dominant-baseline="central" >1000</text>
+    </g>
+    <g class="tick" transform="translate(0, 103.16)">
+      <line class="tick-line" x1="-6" y1="0" x2="0" y2="0" stroke="currentColor" stroke-width="1"/>
+      <text class="tick-label" x="-9" y="0" text-anchor="end" dominant-baseline="central" >1200</text>
+    </g>
+    <g class="tick" transform="translate(0, 73.68)">
+      <line class="tick-line" x1="-6" y1="0" x2="0" y2="0" stroke="currentColor" stroke-width="1"/>
+      <text class="tick-label" x="-9" y="0" text-anchor="end" dominant-baseline="central" >1400</text>
+    </g>
+    <g class="tick" transform="translate(0, 44.21)">
+      <line class="tick-line" x1="-6" y1="0" x2="0" y2="0" stroke="currentColor" stroke-width="1"/>
+      <text class="tick-label" x="-9" y="0" text-anchor="end" dominant-baseline="central" >1600</text>
+    </g>
+    <g class="tick" transform="translate(0, 14.74)">
+      <line class="tick-line" x1="-6" y1="0" x2="0" y2="0" stroke="currentColor" stroke-width="1"/>
+      <text class="tick-label" x="-9" y="0" text-anchor="end" dominant-baseline="central" >1800</text>
+    </g>
+  </g>
+
+    </g>
+
+
+
+
+
+
+      <rect id="noadicto-0"
+            href="#stress-0"
+            x="12.0"
+            y="173.74736842105264"
+            width="77.44"
+            height="106.25263157894736"
+            fill="#5b9bd5"
+            opacity="0.95"/>
+
+      <rect id="adicto-0"
+            href="#stress-0"
+            x="89.44"
+            y="17.389473684210543"
+            width="77.44"
+            height="262.61052631578946"
+            fill="#ff9933"
+            opacity="0.95"/>
+
+
+
+
+
+
+      <rect id="noadicto-1"
+            href="#stress-1"
+            x="212.0"
+            y="175.07368421052632"
+            width="77.44"
+            height="104.92631578947368"
+            fill="#5b9bd5"
+            opacity="0.95"/>
+
+      <rect id="adicto-1"
+            href="#stress-1"
+            x="289.44"
+            y="25.78947368421052"
+            width="77.44"
+            height="254.21052631578948"
+            fill="#ff9933"
+            opacity="0.95"/>
+
+
+
+
+
+
+      <rect id="noadicto-2"
+            href="#stress-2"
+            x="412.0"
+            y="168.14736842105265"
+            width="77.44"
+            height="111.85263157894735"
+            fill="#5b9bd5"
+            opacity="0.95"/>
+
+      <rect id="adicto-2"
+            href="#stress-2"
+            x="489.44"
+            y="14.589473684210532"
+            width="77.44"
+            height="265.41052631578947"
+            fill="#ff9933"
+            opacity="0.95"/>
+
+
+    <text x="300.0"
+          y="325"
+          text-anchor="middle"
+          class="axis-label">
+      Nivel de estrés
+    </text>
+
+    <text x="-155"
+          y="-50"
+          transform="rotate(-90)"
+          text-anchor="middle"
+          class="axis-label">
+      Cantidad
+    </text>
+
+    <rect x="600" y="10"
+          width="12"
+          height="12"
+          fill="#5b9bd5"/>
+
+    <text x="620"
+          y="20"
+          class="legend-label">
+      No adicto
+    </text>
+
+    <rect x="600" y="35"
+          width="12"
+          height="12"
+          fill="#ff9933"/>
+
+    <text x="620"
+          y="45"
+          class="legend-label">
+      Adicto
+    </text>
+
+    <text x="585"
+          y="0"
+          class="legend-label">
+      Adicción
+    </text>
+
+  </g>
+
+  <metadata>
+    <v:table name="stress_addiction_data"
+             description="Distribución del nivel de estrés por condición de adicción"
+             visualization="chart"
+             columns="id,Stress,NoAdicto,Adicto"
+             primaryKey="id">
+
+      <v:row id="stress-0"
+             hrefs="noadicto-0,adicto-0">
+        0,Low,721,1782
+      </v:row>
+      <v:row id="stress-1"
+             hrefs="noadicto-1,adicto-1">
+        1,Medium,712,1725
+      </v:row>
+      <v:row id="stress-2"
+             hrefs="noadicto-2,adicto-2">
+        2,High,759,1801
+      </v:row>
+
+    </v:table>
+  </metadata>
+
+</svg>

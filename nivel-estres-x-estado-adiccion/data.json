@@ -1,0 +1,22 @@
+{
+  "data": [
+    {
+      "id": 0,
+      "Stress": "Low",
+      "NoAdicto": 721,
+      "Adicto": 1782
+    },
+    {
+      "id": 1,
+      "Stress": "Medium",
+      "NoAdicto": 712,
+      "Adicto": 1725
+    },
+    {
+      "id": 2,
+      "Stress": "High",
+      "NoAdicto": 759,
+      "Adicto": 1801
+    }
+  ]
+}

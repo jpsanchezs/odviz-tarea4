@@ -1,0 +1,192 @@
+{# Distribución del nivel de estrés por condición de adicción #}
+
+{% set margin = obj("top", 40, "right", 130, "bottom", 60, "left", 70) %}
+{% set svg_w = 800 %}
+{% set svg_h = 380 %}
+{% set plot_w = svg_w - margin.left - margin.right %}
+{% set plot_h = svg_h - margin.top - margin.bottom %}
+
+{% set categorias = map(data, "Stress") %}
+
+<svg width="{{svg_w}}"
+     height="{{svg_h}}"
+     xmlns="http://www.w3.org/2000/svg"
+     xmlns:v="https://odviz.org/1.0/">
+
+  <style>
+    .tick-label {
+      font-family: sans-serif;
+      fill: #333;
+      font-size: 11px;
+    }
+
+    .axis-line,
+    .tick-line {
+      stroke: #666;
+    }
+
+    .grid-line {
+      stroke: #e6e6e6;
+    }
+
+    .title {
+      font-family: sans-serif;
+      font-size: 16px;
+      fill: #222;
+    }
+
+    .axis-label {
+      font-family: sans-serif;
+      font-size: 13px;
+      fill: #333;
+    }
+
+    .legend-label {
+      font-family: sans-serif;
+      font-size: 12px;
+      fill: #333;
+    }
+  </style>
+
+  <text x="20"
+        y="25"
+        class="title">
+    Distribución del nivel de estrés por condición de adicción
+  </text>
+
+  <g transform="translate({{margin.left}},{{margin.top}})">
+
+    {% set x = scaleBand()
+      | range(0, plot_w)
+      | domain(categorias)
+      | padding(0.12) %}
+
+    {% set y = scaleLinear()
+      | domain([0, 1900])
+      | range(plot_h, 0) %}
+
+    {# Grid horizontal #}
+    {% set y0 = scale(y, 0) %}
+    {% set y500 = scale(y, 500) %}
+    {% set y1000 = scale(y, 1000) %}
+    {% set y1500 = scale(y, 1500) %}
+    {% set y1900 = scale(y, 1900) %}
+
+    <line x1="0" x2="{{plot_w}}" y1="{{y0}}" y2="{{y0}}" class="grid-line"/>
+    <line x1="0" x2="{{plot_w}}" y1="{{y500}}" y2="{{y500}}" class="grid-line"/>
+    <line x1="0" x2="{{plot_w}}" y1="{{y1000}}" y2="{{y1000}}" class="grid-line"/>
+    <line x1="0" x2="{{plot_w}}" y1="{{y1500}}" y2="{{y1500}}" class="grid-line"/>
+    <line x1="0" x2="{{plot_w}}" y1="{{y1900}}" y2="{{y1900}}" class="grid-line"/>
+
+    {# Ejes #}
+    <g transform="translate(0,{{plot_h}})">
+      {{ call(axisBottom(x)) }}
+    </g>
+
+    <g>
+      {{ call(axisLeft(y) | tickCount(5)) }}
+    </g>
+
+    {# Barras agrupadas #}
+    {% for d in data %}
+
+      {% set x0 = scale(x, d.Stress) %}
+      {% set bw = bandwidth(x) %}
+      {% set bar_w = bw * 0.44 %}
+      {% set gap_w = bw * 0.0 %}
+
+      {% set x_no = x0 %}
+      {% set x_ad = x0 + bar_w + gap_w %}
+
+      {% set y_no = scale(y, d.NoAdicto) %}
+      {% set y_ad = scale(y, d.Adicto) %}
+
+      {% set h_no = plot_h - y_no %}
+      {% set h_ad = plot_h - y_ad %}
+
+      <rect id="noadicto-{{ d.id }}"
+            href="#stress-{{ d.id }}"
+            x="{{x_no}}"
+            y="{{y_no}}"
+            width="{{bar_w}}"
+            height="{{h_no}}"
+            fill="#5b9bd5"
+            opacity="0.95"/>
+
+      <rect id="adicto-{{ d.id }}"
+            href="#stress-{{ d.id }}"
+            x="{{x_ad}}"
+            y="{{y_ad}}"
+            width="{{bar_w}}"
+            height="{{h_ad}}"
+            fill="#ff9933"
+            opacity="0.95"/>
+
+    {% endfor %}
+
+    {# Etiqueta eje X #}
+    <text x="{{plot_w / 2}}"
+          y="{{plot_h + 45}}"
+          text-anchor="middle"
+          class="axis-label">
+      Nivel de estrés
+    </text>
+
+    {# Etiqueta eje Y #}
+    <text x="-155"
+          y="-50"
+          transform="rotate(-90)"
+          text-anchor="middle"
+          class="axis-label">
+      Cantidad
+    </text>
+
+    {# Leyenda #}
+    <rect x="{{plot_w}}" y="10"
+          width="12"
+          height="12"
+          fill="#5b9bd5"/>
+
+    <text x="{{plot_w + 20}}"
+          y="20"
+          class="legend-label">
+      No adicto
+    </text>
+
+    <rect x="{{plot_w}}" y="35"
+          width="12"
+          height="12"
+          fill="#ff9933"/>
+
+    <text x="{{plot_w + 20}}"
+          y="45"
+          class="legend-label">
+      Adicto
+    </text>
+
+    <text x="{{plot_w - 15}}"
+          y="0"
+          class="legend-label">
+      Adicción
+    </text>
+
+  </g>
+
+  <metadata>
+    <v:table name="stress_addiction_data"
+             description="Distribución del nivel de estrés por condición de adicción"
+             visualization="chart"
+             columns="id,Stress,NoAdicto,Adicto"
+             primaryKey="id">
+
+      {% for d in data %}
+      <v:row id="stress-{{ d.id }}"
+             hrefs="noadicto-{{ d.id }},adicto-{{ d.id }}">
+        {{ d.id }},{{ d.Stress }},{{ d.NoAdicto }},{{ d.Adicto }}
+      </v:row>
+      {% endfor %}
+
+    </v:table>
+  </metadata>
+
+</svg>

@@ -1,0 +1,95 @@
+{# Distribución de género de la muestra #}
+
+{% set margin = obj("top", 30, "right", 30, "bottom", 70, "left", 60) %}
+{% set svg_w = 460 %}
+{% set svg_h = 400 %}
+{% set width = svg_w - margin.left - margin.right %}
+{% set height = svg_h - margin.top - margin.bottom %}
+
+{% set genders = map(data, "gender") %}
+
+<svg width="{{svg_w}}"
+     height="{{svg_h}}"
+     xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     xmlns:v="https://odviz.org/1.0/">
+
+  <style>
+    .tick-label { font-family: sans-serif; fill: #333; }
+    .axis-line, .tick-line { stroke: #666; }
+    .chart-title { font-family: sans-serif; font-size: 14px; fill: #222; }
+    .axis-label { font-family: sans-serif; font-size: 12px; fill: #444; }
+    .bar { fill: #69b3a2; opacity: 0.85; }
+  </style>
+
+  <text class="chart-title"
+        x="{{ svg_w / 2 }}"
+        y="20"
+        text-anchor="middle">
+    Distribución de género de la muestra
+  </text>
+
+  <g transform="translate({{margin.left}},{{margin.top}})">
+    {% set x = scaleBand()
+          | range(0, width)
+          | domain(genders)
+          | padding(0.3) %}
+
+    {% set y = scaleLinear()
+          | domain([0, 3000])
+          | range(height, 0) %}
+
+    <g transform="translate(0,{{height}})">
+      {{ call(axisBottom(x) | tickValues(genders)) }}
+    </g>
+
+    <g>
+      {{ call(axisLeft(y) | tickCount(5)) }}
+    </g>
+
+{% for d in data %}
+  {% set y_pos = scale(y, d.count) %}
+  {% set bar_h = height - y_pos %}
+
+  <rect id="bar-{{ d.id }}"
+        href="#gender-{{ d.id }}"
+        x="{{ scale(x, d.gender) }}"
+        y="{{ y_pos }}"
+        width="{{ bandwidth(x) }}"
+        height="{{ bar_h }}"
+        class="bar"/>
+{% endfor %}
+
+    <text text-anchor="middle"
+          x="{{ width / 2 }}"
+          y="{{ height + 55 }}"
+          class="axis-label">
+      Género
+    </text>
+
+    <text text-anchor="middle"
+          transform="rotate(-90)"
+          x="-{{ height / 2 }}"
+          y="-45"
+          class="axis-label">
+      Cantidad
+    </text>
+  </g>
+
+<metadata>
+  <v:table name="gender_data"
+           description="Distribución de género de la muestra"
+           visualization="chart"
+           columns="id,gender,count"
+           primaryKey="id">
+
+    {% for d in data %}
+    <v:row id="gender-{{ d.id }}"
+           hrefs="bar-{{ d.id }}">
+      {{ d.id }},{{ d.gender }},{{ d.count }}
+    </v:row>
+    {% endfor %}
+
+  </v:table>
+</metadata>
+</svg>

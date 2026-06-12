@@ -1,0 +1,107 @@
+{# Distribución del nivel de estrés #}
+
+{% set margin = obj("top", 30, "right", 30, "bottom", 70, "left", 60) %}
+{% set width = 460 - margin.left - margin.right %}
+{% set height = 400 - margin.top - margin.bottom %}
+
+<svg width="{{width + margin.left + margin.right}}"
+     height="{{height + margin.top + margin.bottom}}"
+     xmlns="http://www.w3.org/2000/svg"
+     xmlns:v="https://odviz.org/1.0/">
+
+  <style>
+    .tick-label {
+      font-family: sans-serif;
+      fill: #333;
+    }
+
+    .axis-line,
+    .tick-line {
+      stroke: #666;
+    }
+
+    .chart-title {
+      font-family: sans-serif;
+      font-size: 14px;
+      fill: #222;
+    }
+  </style>
+
+  <text class="chart-title"
+        x="{{(width + margin.left + margin.right) / 2}}"
+        y="20"
+        text-anchor="middle">
+    Distribución del nivel de estrés
+  </text>
+
+  <g transform="translate({{margin.left}},{{margin.top}})">
+
+    {% set levels = map(data, "stress_level") %}
+
+    {% set x = scaleBand()
+          | range(0, width)
+          | domain(levels)
+          | padding(0.3) %}
+
+    <g transform="translate(0,{{height}})">
+      {{ call(axisBottom(x) | tickValues(levels)) }}
+    </g>
+
+    {% set y = scaleLinear()
+          | domain([0, 3000])
+          | range(height, 0) %}
+
+    <g>
+      {{ call(axisLeft(y) | tickCount(5)) }}
+    </g>
+
+    {% for d in data %}
+      <rect id="bar-{{ d.id }}"
+            href="#stress-{{ d.id }}"
+            x="{{ scale(x, d.stress_level) }}"
+            y="{{ scale(y, d.count) }}"
+            width="{{ bandwidth(x) }}"
+            height="{{ height - scale(y, d.count) }}"
+            fill="#2ca02c"
+            opacity="0.85"/>
+    {% endfor %}
+
+    <text text-anchor="middle"
+          x="{{ width / 2 }}"
+          y="{{ height + 55 }}"
+          font-family="sans-serif"
+          font-size="12"
+          fill="#444">
+      Nivel de estrés
+    </text>
+
+    <text text-anchor="middle"
+          transform="rotate(-90)"
+          x="{{ 0 - height / 2 }}"
+          y="-45"
+          font-family="sans-serif"
+          font-size="12"
+          fill="#444">
+      Cantidad de usuarios
+    </text>
+
+  </g>
+
+  <metadata>
+    <v:table name="stress_data"
+             description="Distribución del nivel de estrés"
+             visualization="chart"
+             columns="id,stress_level,count"
+             primaryKey="id">
+
+      {% for d in data %}
+      <v:row id="stress-{{ d.id }}"
+             hrefs="bar-{{ d.id }}">
+        {{ d.id }},{{ d.stress_level }},{{ d.count }}
+      </v:row>
+      {% endfor %}
+
+    </v:table>
+  </metadata>
+
+</svg>

@@ -1,0 +1,508 @@
+
+
+<svg width="500"
+     height="400"
+     xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     xmlns:v="https://odviz.org/1.0/">
+
+  <style>
+    .tick-label { font-family: sans-serif; fill: #333; }
+    .axis-line, .tick-line { stroke: #666; }
+    .chart-title { font-family: sans-serif; font-size: 14px; fill: #222; }
+    .bar { fill: #ff7f0e; opacity: 0.85; }
+    .axis-label { font-family: sans-serif; font-size: 12px; fill: #444; }
+  </style>
+
+  <text class="chart-title"
+        x="250.0"
+        y="20"
+        text-anchor="middle">
+    Distribución de horas de sueño nocturno
+  </text>
+
+  <g transform="translate(60,30)">
+
+
+    <g transform="translate(0,300)">
+      <!-- axis orientation=bottom range=[0,410] ticks=11 -->
+  <g class="axis axis-bottom" transform="translate(0, 0)">
+    <line class="axis-line" x1="0" y1="0" x2="410" y2="0" stroke="currentColor" stroke-width="1"/>
+    <g class="tick" transform="translate(0, 0)">
+      <line class="tick-line" x1="0" y1="0" x2="0" y2="6" stroke="currentColor" stroke-width="1"/>
+      <text class="tick-label" x="0" y="9" text-anchor="middle" dominant-baseline="hanging" dy="0.15em" >4</text>
+    </g>
+    <g class="tick" transform="translate(41, 0)">
+      <line class="tick-line" x1="0" y1="0" x2="0" y2="6" stroke="currentColor" stroke-width="1"/>
+      <text class="tick-label" x="0" y="9" text-anchor="middle" dominant-baseline="hanging" dy="0.15em" >4.50</text>
+    </g>
+    <g class="tick" transform="translate(82, 0)">
+      <line class="tick-line" x1="0" y1="0" x2="0" y2="6" stroke="currentColor" stroke-width="1"/>
+      <text class="tick-label" x="0" y="9" text-anchor="middle" dominant-baseline="hanging" dy="0.15em" >5</text>
+    </g>
+    <g class="tick" transform="translate(123, 0)">
+      <line class="tick-line" x1="0" y1="0" x2="0" y2="6" stroke="currentColor" stroke-width="1"/>
+      <text class="tick-label" x="0" y="9" text-anchor="middle" dominant-baseline="hanging" dy="0.15em" >5.50</text>
+    </g>
+    <g class="tick" transform="translate(164, 0)">
+      <line class="tick-line" x1="0" y1="0" x2="0" y2="6" stroke="currentColor" stroke-width="1"/>
+      <text class="tick-label" x="0" y="9" text-anchor="middle" dominant-baseline="hanging" dy="0.15em" >6</text>
+    </g>
+    <g class="tick" transform="translate(205, 0)">
+      <line class="tick-line" x1="0" y1="0" x2="0" y2="6" stroke="currentColor" stroke-width="1"/>
+      <text class="tick-label" x="0" y="9" text-anchor="middle" dominant-baseline="hanging" dy="0.15em" >6.50</text>
+    </g>
+    <g class="tick" transform="translate(246, 0)">
+      <line class="tick-line" x1="0" y1="0" x2="0" y2="6" stroke="currentColor" stroke-width="1"/>
+      <text class="tick-label" x="0" y="9" text-anchor="middle" dominant-baseline="hanging" dy="0.15em" >7</text>
+    </g>
+    <g class="tick" transform="translate(287, 0)">
+      <line class="tick-line" x1="0" y1="0" x2="0" y2="6" stroke="currentColor" stroke-width="1"/>
+      <text class="tick-label" x="0" y="9" text-anchor="middle" dominant-baseline="hanging" dy="0.15em" >7.50</text>
+    </g>
+    <g class="tick" transform="translate(328, 0)">
+      <line class="tick-line" x1="0" y1="0" x2="0" y2="6" stroke="currentColor" stroke-width="1"/>
+      <text class="tick-label" x="0" y="9" text-anchor="middle" dominant-baseline="hanging" dy="0.15em" >8</text>
+    </g>
+    <g class="tick" transform="translate(369, 0)">
+      <line class="tick-line" x1="0" y1="0" x2="0" y2="6" stroke="currentColor" stroke-width="1"/>
+      <text class="tick-label" x="0" y="9" text-anchor="middle" dominant-baseline="hanging" dy="0.15em" >8.50</text>
+    </g>
+    <g class="tick" transform="translate(410, 0)">
+      <line class="tick-line" x1="0" y1="0" x2="0" y2="6" stroke="currentColor" stroke-width="1"/>
+      <text class="tick-label" x="0" y="9" text-anchor="middle" dominant-baseline="hanging" dy="0.15em" >9</text>
+    </g>
+  </g>
+
+    </g>
+
+
+    <g>
+      <!-- axis orientation=left range=[300,0] ticks=8 -->
+  <g class="axis axis-left" transform="translate(0, 0)">
+    <line class="axis-line" x1="0" y1="300" x2="0" y2="0" stroke="currentColor" stroke-width="1"/>
+    <g class="tick" transform="translate(0, 300)">
+      <line class="tick-line" x1="-6" y1="0" x2="0" y2="0" stroke="currentColor" stroke-width="1"/>
+      <text class="tick-label" x="-9" y="0" text-anchor="end" dominant-baseline="central" >0</text>
+    </g>
+    <g class="tick" transform="translate(0, 257.14)">
+      <line class="tick-line" x1="-6" y1="0" x2="0" y2="0" stroke="currentColor" stroke-width="1"/>
+      <text class="tick-label" x="-9" y="0" text-anchor="end" dominant-baseline="central" >50</text>
+    </g>
+    <g class="tick" transform="translate(0, 214.29)">
+      <line class="tick-line" x1="-6" y1="0" x2="0" y2="0" stroke="currentColor" stroke-width="1"/>
+      <text class="tick-label" x="-9" y="0" text-anchor="end" dominant-baseline="central" >100</text>
+    </g>
+    <g class="tick" transform="translate(0, 171.43)">
+      <line class="tick-line" x1="-6" y1="0" x2="0" y2="0" stroke="currentColor" stroke-width="1"/>
+      <text class="tick-label" x="-9" y="0" text-anchor="end" dominant-baseline="central" >150</text>
+    </g>
+    <g class="tick" transform="translate(0, 128.57)">
+      <line class="tick-line" x1="-6" y1="0" x2="0" y2="0" stroke="currentColor" stroke-width="1"/>
+      <text class="tick-label" x="-9" y="0" text-anchor="end" dominant-baseline="central" >200</text>
+    </g>
+    <g class="tick" transform="translate(0, 85.71)">
+      <line class="tick-line" x1="-6" y1="0" x2="0" y2="0" stroke="currentColor" stroke-width="1"/>
+      <text class="tick-label" x="-9" y="0" text-anchor="end" dominant-baseline="central" >250</text>
+    </g>
+    <g class="tick" transform="translate(0, 42.86)">
+      <line class="tick-line" x1="-6" y1="0" x2="0" y2="0" stroke="currentColor" stroke-width="1"/>
+      <text class="tick-label" x="-9" y="0" text-anchor="end" dominant-baseline="central" >300</text>
+    </g>
+    <g class="tick" transform="translate(0, 0)">
+      <line class="tick-line" x1="-6" y1="0" x2="0" y2="0" stroke="currentColor" stroke-width="1"/>
+      <text class="tick-label" x="-9" y="0" text-anchor="end" dominant-baseline="central" >350</text>
+    </g>
+  </g>
+
+    </g>
+
+
+
+      <rect id="bar-0"
+            href="#sleep-0"
+            x="0.0"
+            y="300.0"
+            width="12.666666666666666"
+            height="0.0"
+            class="bar"/>
+
+      <rect id="bar-1"
+            href="#sleep-1"
+            x="13.693999999999985"
+            y="300.0"
+            width="12.666666666666666"
+            height="0.0"
+            class="bar"/>
+
+      <rect id="bar-2"
+            href="#sleep-2"
+            x="27.306000000000015"
+            y="300.0"
+            width="12.666666666666666"
+            height="0.0"
+            class="bar"/>
+
+      <rect id="bar-3"
+            href="#sleep-3"
+            x="41.0"
+            y="70.2857142857143"
+            width="12.666666666666666"
+            height="229.7142857142857"
+            class="bar"/>
+
+      <rect id="bar-4"
+            href="#sleep-4"
+            x="54.69399999999999"
+            y="71.14285714285714"
+            width="12.666666666666666"
+            height="228.85714285714286"
+            class="bar"/>
+
+      <rect id="bar-5"
+            href="#sleep-5"
+            x="68.30600000000001"
+            y="84.0"
+            width="12.666666666666666"
+            height="216.0"
+            class="bar"/>
+
+      <rect id="bar-6"
+            href="#sleep-6"
+            x="82.0"
+            y="42.0"
+            width="12.666666666666666"
+            height="258.0"
+            class="bar"/>
+
+      <rect id="bar-7"
+            href="#sleep-7"
+            x="95.69399999999999"
+            y="54.00000000000003"
+            width="12.666666666666666"
+            height="245.99999999999997"
+            class="bar"/>
+
+      <rect id="bar-8"
+            href="#sleep-8"
+            x="109.30600000000003"
+            y="69.42857142857142"
+            width="12.666666666666666"
+            height="230.57142857142858"
+            class="bar"/>
+
+      <rect id="bar-9"
+            href="#sleep-9"
+            x="123.0"
+            y="52.28571428571428"
+            width="12.666666666666666"
+            height="247.71428571428572"
+            class="bar"/>
+
+      <rect id="bar-10"
+            href="#sleep-10"
+            x="136.694"
+            y="59.14285714285714"
+            width="12.666666666666666"
+            height="240.85714285714286"
+            class="bar"/>
+
+      <rect id="bar-11"
+            href="#sleep-11"
+            x="150.306"
+            y="77.14285714285714"
+            width="12.666666666666666"
+            height="222.85714285714286"
+            class="bar"/>
+
+      <rect id="bar-12"
+            href="#sleep-12"
+            x="164.0"
+            y="43.71428571428572"
+            width="12.666666666666666"
+            height="256.2857142857143"
+            class="bar"/>
+
+      <rect id="bar-13"
+            href="#sleep-13"
+            x="177.694"
+            y="38.571428571428555"
+            width="12.666666666666666"
+            height="261.42857142857144"
+            class="bar"/>
+
+      <rect id="bar-14"
+            href="#sleep-14"
+            x="191.306"
+            y="61.71428571428572"
+            width="12.666666666666666"
+            height="238.28571428571428"
+            class="bar"/>
+
+      <rect id="bar-15"
+            href="#sleep-15"
+            x="205.0"
+            y="52.28571428571428"
+            width="12.666666666666666"
+            height="247.71428571428572"
+            class="bar"/>
+
+      <rect id="bar-16"
+            href="#sleep-16"
+            x="218.694"
+            y="60.85714285714286"
+            width="12.666666666666666"
+            height="239.14285714285714"
+            class="bar"/>
+
+      <rect id="bar-17"
+            href="#sleep-17"
+            x="232.30599999999998"
+            y="44.571428571428584"
+            width="12.666666666666666"
+            height="255.42857142857142"
+            class="bar"/>
+
+      <rect id="bar-18"
+            href="#sleep-18"
+            x="246.0"
+            y="40.28571428571428"
+            width="12.666666666666666"
+            height="259.7142857142857"
+            class="bar"/>
+
+      <rect id="bar-19"
+            href="#sleep-19"
+            x="259.69399999999996"
+            y="75.42857142857144"
+            width="12.666666666666666"
+            height="224.57142857142856"
+            class="bar"/>
+
+      <rect id="bar-20"
+            href="#sleep-20"
+            x="273.30600000000004"
+            y="60.85714285714286"
+            width="12.666666666666666"
+            height="239.14285714285714"
+            class="bar"/>
+
+      <rect id="bar-21"
+            href="#sleep-21"
+            x="287.0"
+            y="65.14285714285717"
+            width="12.666666666666666"
+            height="234.85714285714283"
+            class="bar"/>
+
+      <rect id="bar-22"
+            href="#sleep-22"
+            x="300.69399999999996"
+            y="65.14285714285717"
+            width="12.666666666666666"
+            height="234.85714285714283"
+            class="bar"/>
+
+      <rect id="bar-23"
+            href="#sleep-23"
+            x="314.30600000000004"
+            y="66.0"
+            width="12.666666666666666"
+            height="234.0"
+            class="bar"/>
+
+      <rect id="bar-24"
+            href="#sleep-24"
+            x="328.0"
+            y="53.14285714285714"
+            width="12.666666666666666"
+            height="246.85714285714286"
+            class="bar"/>
+
+      <rect id="bar-25"
+            href="#sleep-25"
+            x="341.69399999999996"
+            y="75.42857142857144"
+            width="12.666666666666666"
+            height="224.57142857142856"
+            class="bar"/>
+
+      <rect id="bar-26"
+            href="#sleep-26"
+            x="355.30600000000004"
+            y="85.71428571428572"
+            width="12.666666666666666"
+            height="214.28571428571428"
+            class="bar"/>
+
+      <rect id="bar-27"
+            href="#sleep-27"
+            x="369.0"
+            y="60.85714285714286"
+            width="12.666666666666666"
+            height="239.14285714285714"
+            class="bar"/>
+
+      <rect id="bar-28"
+            href="#sleep-28"
+            x="382.694"
+            y="57.428571428571416"
+            width="12.666666666666666"
+            height="242.57142857142858"
+            class="bar"/>
+
+      <rect id="bar-29"
+            href="#sleep-29"
+            x="396.306"
+            y="84.85714285714283"
+            width="12.666666666666666"
+            height="215.14285714285717"
+            class="bar"/>
+
+    <text text-anchor="middle"
+          x="205.0"
+          y="355"
+          class="axis-label">
+      Horas de sueño
+    </text>
+
+    <text text-anchor="middle"
+          transform="rotate(-90)"
+          x="-150.0"
+          y="-45"
+          class="axis-label">
+      Frecuencia
+    </text>
+  </g>
+
+  <metadata>
+    <v:table name="sleep_data"
+             description="Distribución de horas de sueño nocturno"
+             visualization="chart"
+             columns="id,horas,count"
+             primaryKey="id">
+
+      <v:row id="sleep-0"
+             hrefs="bar-0">
+        0,4.0,0
+      </v:row>
+      <v:row id="sleep-1"
+             hrefs="bar-1">
+        1,4.167,0
+      </v:row>
+      <v:row id="sleep-2"
+             hrefs="bar-2">
+        2,4.333,0
+      </v:row>
+      <v:row id="sleep-3"
+             hrefs="bar-3">
+        3,4.5,268
+      </v:row>
+      <v:row id="sleep-4"
+             hrefs="bar-4">
+        4,4.667,267
+      </v:row>
+      <v:row id="sleep-5"
+             hrefs="bar-5">
+        5,4.833,252
+      </v:row>
+      <v:row id="sleep-6"
+             hrefs="bar-6">
+        6,5.0,301
+      </v:row>
+      <v:row id="sleep-7"
+             hrefs="bar-7">
+        7,5.167,287
+      </v:row>
+      <v:row id="sleep-8"
+             hrefs="bar-8">
+        8,5.333,269
+      </v:row>
+      <v:row id="sleep-9"
+             hrefs="bar-9">
+        9,5.5,289
+      </v:row>
+      <v:row id="sleep-10"
+             hrefs="bar-10">
+        10,5.667,281
+      </v:row>
+      <v:row id="sleep-11"
+             hrefs="bar-11">
+        11,5.833,260
+      </v:row>
+      <v:row id="sleep-12"
+             hrefs="bar-12">
+        12,6.0,299
+      </v:row>
+      <v:row id="sleep-13"
+             hrefs="bar-13">
+        13,6.167,305
+      </v:row>
+      <v:row id="sleep-14"
+             hrefs="bar-14">
+        14,6.333,278
+      </v:row>
+      <v:row id="sleep-15"
+             hrefs="bar-15">
+        15,6.5,289
+      </v:row>
+      <v:row id="sleep-16"
+             hrefs="bar-16">
+        16,6.667,279
+      </v:row>
+      <v:row id="sleep-17"
+             hrefs="bar-17">
+        17,6.833,298
+      </v:row>
+      <v:row id="sleep-18"
+             hrefs="bar-18">
+        18,7.0,303
+      </v:row>
+      <v:row id="sleep-19"
+             hrefs="bar-19">
+        19,7.167,262
+      </v:row>
+      <v:row id="sleep-20"
+             hrefs="bar-20">
+        20,7.333,279
+      </v:row>
+      <v:row id="sleep-21"
+             hrefs="bar-21">
+        21,7.5,274
+      </v:row>
+      <v:row id="sleep-22"
+             hrefs="bar-22">
+        22,7.667,274
+      </v:row>
+      <v:row id="sleep-23"
+             hrefs="bar-23">
+        23,7.833,273
+      </v:row>
+      <v:row id="sleep-24"
+             hrefs="bar-24">
+        24,8.0,288
+      </v:row>
+      <v:row id="sleep-25"
+             hrefs="bar-25">
+        25,8.167,262
+      </v:row>
+      <v:row id="sleep-26"
+             hrefs="bar-26">
+        26,8.333,250
+      </v:row>
+      <v:row id="sleep-27"
+             hrefs="bar-27">
+        27,8.5,279
+      </v:row>
+      <v:row id="sleep-28"
+             hrefs="bar-28">
+        28,8.667,283
+      </v:row>
+      <v:row id="sleep-29"
+             hrefs="bar-29">
+        29,8.833,251
+      </v:row>
+
+    </v:table>
+  </metadata>
+</svg>

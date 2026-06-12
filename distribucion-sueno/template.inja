@@ -1,0 +1,93 @@
+{# Distribución de horas de sueño nocturno #}
+
+{% set margin = obj("top", 30, "right", 30, "bottom", 70, "left", 60) %}
+{% set width = 500 - margin.left - margin.right %}
+{% set height = 400 - margin.top - margin.bottom %}
+
+<svg width="{{width + margin.left + margin.right}}"
+     height="{{height + margin.top + margin.bottom}}"
+     xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     xmlns:v="https://odviz.org/1.0/">
+
+  <style>
+    .tick-label { font-family: sans-serif; fill: #333; }
+    .axis-line, .tick-line { stroke: #666; }
+    .chart-title { font-family: sans-serif; font-size: 14px; fill: #222; }
+    .bar { fill: #ff7f0e; opacity: 0.85; }
+    .axis-label { font-family: sans-serif; font-size: 12px; fill: #444; }
+  </style>
+
+  <text class="chart-title"
+        x="{{(width + margin.left + margin.right) / 2}}"
+        y="20"
+        text-anchor="middle">
+    Distribución de horas de sueño nocturno
+  </text>
+
+  <g transform="translate({{margin.left}},{{margin.top}})">
+
+    {% set x = scaleLinear()
+          | domain([4, 9])
+          | range(0, width) %}
+
+    <g transform="translate(0,{{height}})">
+      {{ call(axisBottom(x) | tickCount(6)) }}
+    </g>
+
+    {% set y = scaleLinear()
+          | domain([0, 350])
+          | range(height, 0) %}
+
+    <g>
+      {{ call(axisLeft(y) | tickCount(5)) }}
+    </g>
+
+    {% set binWidth = width / 30 %}
+
+    {% for d in data %}
+      {% set y_pos = scale(y, d.count) %}
+      {% set bar_h = height - y_pos %}
+
+      <rect id="bar-{{ d.id }}"
+            href="#sleep-{{ d.id }}"
+            x="{{ scale(x, d.horas) }}"
+            y="{{ y_pos }}"
+            width="{{ binWidth - 1 }}"
+            height="{{ bar_h }}"
+            class="bar"/>
+    {% endfor %}
+
+    <text text-anchor="middle"
+          x="{{ width / 2 }}"
+          y="{{ height + 55 }}"
+          class="axis-label">
+      Horas de sueño
+    </text>
+
+    <text text-anchor="middle"
+          transform="rotate(-90)"
+          x="{{ 0 - height / 2 }}"
+          y="-45"
+          class="axis-label">
+      Frecuencia
+    </text>
+  </g>
+
+  <metadata>
+    <v:table name="sleep_data"
+             description="Distribución de horas de sueño nocturno"
+             visualization="chart"
+             columns="id,horas,count"
+             primaryKey="id">
+
+      {% for d in data %}
+      <v:row id="sleep-{{ d.id }}"
+             hrefs="bar-{{ d.id }}">
+        {{ d.id }},{{ d.horas }},{{ d.count }}
+      </v:row>
+      {% endfor %}
+
+    </v:table>
+  </metadata>
+</svg>

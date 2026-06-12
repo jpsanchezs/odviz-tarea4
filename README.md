@@ -1,2 +1,8 @@
-# odviz-tarea4
-Visualizaciones interactivas ODViz - Tarea 4/5 TEC
+
+## Integrantes
+- Sánchez Sánchez Juan Pablo
+- Sequeira Requenes	Daniel Stiben
+
+## Página 
+https://jpsanchezs.github.io/odviz-tarea4/ 
+
